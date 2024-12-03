@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Link testing</title>
+    </head>
+    <body>
+        <p id="text-1"> Link testing page </p>
+    </body>
+    <script type="text/javascript">
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('proto') && urlParams.has('url')) {
+                const element = document.createElement('a');
+                element.href = urlParams.get('proto') + "://" + urlParams.get('url');
+                element.innerText = "LINK"
+                document.body.appendChild(element);
+            } else {
+                const pElement = document.getElementById('text-1');
+                pElement.innerText = "Test page: Missing 'proto' and 'url' query params";
+            }
+        }());
+    </script>
+    </html>
