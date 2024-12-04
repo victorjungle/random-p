@@ -14,7 +14,7 @@
             if (urlParams.has('proto') && urlParams.has('url')) {
                 const element = document.createElement('a');
                 element.href = urlParams.get('proto') + "://" + urlParams.get('url');
-                element.innerText = "LINK"
+                element.innerText = urlParams.get('proto') + "://" + urlParams.get('url');
                 document.body.appendChild(element);
             } else {
                 const pElement = document.getElementById('text-1');
